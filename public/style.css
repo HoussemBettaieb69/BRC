@@ -8,7 +8,7 @@
    ============================================ */
 :root {
     /* Primary Colors */
-    --primary: #50C878;        /* Emerald green - main brand color */
+    --primary: #000000;        /* Emerald green - main brand color */
     --accent: #4a7c2c;         /* Lighter green - accent */
     
     /* Neutrals */
@@ -116,11 +116,22 @@ body {
    Hero Section
    ============================================ */
 .hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    background: 
+        linear-gradient(
+            rgba(80, 200, 120, 0.193),   /* semi-transparent emerald overlay */
+            rgb(0, 0, 0)
+        ),
+        url('images/heroImg2.jpg') center/cover no-repeat;
     color: var(--white);
     padding: var(--spacing-xl) var(--spacing-md);
     text-align: center;
+    min-height: 70vh;            /* makes hero fill most of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .hero-content {
     max-width: 900px;
@@ -257,6 +268,7 @@ body {
     font-size: var(--font-size-base);
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
 .btn:hover {

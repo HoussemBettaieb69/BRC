@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRC</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Services Page Specific Styles */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-benefits {
+            text-align: left;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .service-benefits li {
+            margin-bottom: 8px;
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        .service-benefits li:before {
+            content: "✓ ";
+            color: var(--primary-green);
+            font-weight: bold;
+            margin-left: -15px;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 30px;
+            }
+
+            .service-card h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">♻️</span>
+                <span class="logo-text">BRC</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Our Services</h1>
+            <p class="hero-subtitle">Professional Cartridge Refilling & Recycling</p>
+            <p class="hero-description">We provide eco-friendly, cost-effective solutions for all your printer cartridge needs. Our expert team ensures quality refilling and responsible recycling to reduce environmental impact while keeping your printing costs low.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-main">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="services-grid">
+                <!-- Toner Cartridge Refilling -->
+                <div class="service-card">
+                    <div class="service-icon">🖨️</div>
+                    <h3>Toner Cartridge Refilling</h3>
+                    <p>Professional refilling of powder toner cartridges for all major printer brands.</p>
+                    <ul class="service-benefits">
+                        <li>Compatible with HP, Canon, Brother, Lexmark & more</li>
+                        <li>High-quality toner ensures crisp, sharp prints</li>
+                        <li>Fast turnaround time</li>
+                        <li>Save up to 70% vs original cartridges</li>
+                    </ul>
+                </div>
+
+                <!-- Liquid Ink Cartridge Refilling -->
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Liquid Ink Cartridge Refilling</h3>
+                    <p>Expert refilling of liquid ink cartridges with high-quality inks.</p>
+                    <ul class="service-benefits">
+                        <li>Works with Epson, Canon, HP, and other inkjet printers</li>
+                        <li>Premium inks for vibrant colors</li>
+                        <li>Eco-certified ink formulations</li>
+                        <li>Bulk ordering discounts available</li>
+                    </ul>
+                </div>
+
+                <!-- Cartridge Recycling -->
+                <div class="service-card">
+                    <div class="service-icon">♻️</div>
+                    <h3>Custom Cartridge</h3>
+                    <p>Cheaper Cartriges with same quality</p>
+                    <ul class="service-benefits">
+                        <li>Cheaper pickup for large quantities</li>
+                        <li>Proper waste disposal & material recovery</li>
+                        <li>Reduces landfill waste</li>
+                        <li>Sustainability certification provided</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose BRC</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Expert Technicians</h3>
+                    <p>Our certified technicians have years of experience in cartridge refilling and maintenance.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Guaranteed Quality</h3>
+                    <p>All refilled cartridges are tested and guaranteed to work perfectly with your printer.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Environmental Commitment</h3>
+                    <p>We're dedicated to reducing plastic waste and promoting sustainable printing practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Save on Printing?</h2>
+            <p>Contact us today to learn more about our refilling services or to place an order.</p>
+            <a href="index.html#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 BRC. All rights reserved. </p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for services page sections */
+        .services-main {
+            padding: 80px 20px;
+        }
+
+        .why-choose-us {
+            background-color: var(--light-bg);
+            padding: 80px 20px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #000000 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: black;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #00000072;
+        }
+
+        @media (max-width: 768px) {
+            .services-main,
+            .why-choose-us {
+                padding: 50px 20px;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</body>
+</html>
