@@ -1,5 +1,14 @@
 {
+  "name": "brc",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node BRC/server.js"
+  },
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "mongodb": "^6.12.0"
   }
 }

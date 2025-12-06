@@ -1,37 +1,59 @@
 //express declarations
-const express = require('express');
-const cors = require('cors');// y3ayt ll frontend 
+//const express = require('express');
+//const cors = require('cors');// y3ayt ll frontend 
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import { MongoClient } from 'mongodb';
 const app = express();
 const PORT = 5000;
 app.use(cors());//y5alli l frontend yesta3mel l backend
 app.use(express.json());
 app.use(express.static('public'));
-require('dotenv').config();
 //mongoDB declarations
-const { MongoClient } = require('mongodb');
+dotenv.config({path : 'C:/Users/henit/OneDrive/Desktop/prog/BRC/mongopassword.env'});
 const client = new MongoClient(process.env.MONGO_URI);
-await client.connect();
-//express 
-const services = [
-    { id: 1, name: 'Toner Cartridge Refilling', description: 'Professional refilling of powder toner cartridges for all major printer brands.' },
-    { id: 2, name: 'Liquid Ink Cartridge Refilling', description: 'Expert refilling of liquid ink cartridges with high-quality inks.' },
-    { id: 3, name: 'Custom Cartridge', description: 'Cheaper Cartridges with same quality'}
-];
-const contacts = [];
+let servicesCollection;
+let contactsCollection;
 
-app.get('/api/services', (req, res) => {
+async function connectDB() {
+    try {
+        await client.connect();
+        const db = client.db(process.env.DB_NAME);
+        servicesCollection = db.collection('services');
+        contactsCollection = db.collection('contacts');
+        console.log('Connected to MongoDB Atlas');
+    } catch (err) {
+        console.error('MongoDB connection error:', err);
+    }
+}
+//express 
+
+app.get('/api/services',async (req, res) => {
+    const services = await servicesCollection.find({}).toArray();
     res.json(services);
 });
-app.post('/api/contact' , (req, res) => {
-    contacts.push(req.body);
-    console.log('el jmohor:', contacts);
-    res.json("wsol");
+app.post('/api/contact', async (req, res) => {
+    try {
+        const contact = req.body;
+        const result = await contactsCollection.insertOne(contact);
+        console.log('Inserted contact with _id:', result.insertedId);
+        res.json({ message: 'wsol', id: result.insertedId });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Failed to insert contact' });
+    }
 });
-app.get('/api/contacts', (req, res) => {
+
+app.get('/api/contacts', async (req, res) => {
+    const contacts = await contactsCollection.find({}).toArray();
     res.json(contacts);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+    });
 });
-//mongoDB 
+
+
