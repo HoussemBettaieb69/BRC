@@ -11,9 +11,14 @@ const services = [
     { id: 2, name: 'Liquid Ink Cartridge Refilling', description: 'Expert refilling of liquid ink cartridges with high-quality inks.' },
     { id: 3, name: 'Custom Cartridge', description: 'Cheaper Cartridges with same quality'}
 ];
+const contacts = [];
 
 app.get('/api/services', (req, res) => {
     res.json(services);
+});
+app.post('/api/contact' , (req, res) => {
+    contacts.push(req.body);
+    res.json("wsol");
 });
 
 app.listen(PORT, () => {

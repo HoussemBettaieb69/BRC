@@ -18,7 +18,7 @@ async function loadServices() {
     const servicesList = document.getElementById('services-list');
     
     try {
-        console.log('[v0] Fetching services from API...');
+        console.log('hwa jay el trinooo');
         const response = await fetch(`${API_BASE_URL}${SERVICES_ENDPOINT}`);
         
         if (!response.ok) {
@@ -26,7 +26,7 @@ async function loadServices() {
         }
         
         const services = await response.json();
-        console.log('[v0] Services received:', services);
+        console.log('ala ja bel car:', services);
         
         // Clear loading message
         servicesList.innerHTML = '';
@@ -44,7 +44,7 @@ async function loadServices() {
         });
         
     } catch (error) {
-        console.error('[v0] Error loading services:', error);
+        console.error('error:', error);
         servicesList.innerHTML = `
             <p class="loading" style="color: #d32f2f;">
                 Error loading services. Please check your backend connection.
@@ -67,26 +67,6 @@ function createServiceCard(service) {
     return card;
 }
 
-// ============================================
-// Create Product Card DOM Element
-// ============================================
-function createProductCard(product) {
-    const card = document.createElement('div');
-    card.className = 'product-card';
-    
-    const price = product.price 
-        ? `$${parseFloat(product.price).toFixed(2)}` 
-        : 'Contact for pricing';
-    
-    card.innerHTML = `
-        <h3>${escapeHtml(product.name || 'Product')}</h3>
-        <p>${escapeHtml(product.description || 'No description available')}</p>
-        <div class="price">${escapeHtml(price)}</div>
-        <button class="btn">Add to Cart</button>
-    `;
-    
-    return card;
-}
 
 // ============================================
 // Setup Contact Form Handler
