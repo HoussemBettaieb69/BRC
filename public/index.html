@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartridgePro - Refill & Recycle Printer Cartridges</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">♻️</span>
+                <span class="logo-text">BRC</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Refill Smart, Recycle Right</h1>
+            <p class="hero-subtitle">Professional cartridge refilling & recycling services</p>
+            <p class="hero-description">
+                Reduce waste, save money, and support sustainability. We provide high-quality cartridge refill services 
+                and responsible recycling for all major printer brands.
+            </p>
+            <div class="hero-image">
+                <img src="images\heroImg.webp" 
+                     alt="Printer cartridges being refilled">
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div id="services-list" class="services-grid">
+                <!-- Services will be loaded dynamically from API -->
+                <div class="loading">Loading services...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Available Products</h2>
+            <div id="products-list" class="products-grid">
+                <!-- Products will be loaded dynamically from API -->
+                <div class="loading">Loading products...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><strong>Email:</strong> info@cartridgepro.com</p>
+                    <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                    <p><strong>Address:</strong> 123 Green Street, Eco City, EC 12345</p>
+                </div>
+                <div class="contact-form">
+                    <p>Have questions? Send us a message:</p>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="4" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CartridgePro. All rights reserved. | Committed to sustainability.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

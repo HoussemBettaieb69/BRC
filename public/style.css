@@ -1,0 +1,395 @@
+/* 
+ * CartridgePro Stylesheet
+ * Clean, modern design with responsive layout
+ */
+
+/* ============================================
+   Root Variables & Theme Colors
+   ============================================ */
+:root {
+    /* Primary Colors */
+    --primary: #50C878;        /* Emerald green - main brand color */
+    --accent: #4a7c2c;         /* Lighter green - accent */
+    
+    /* Neutrals */
+    --white: #ffffff;
+    --dark: #1a1a1a;           /* Almost black */
+    --gray-light: #f5f5f5;     /* Light gray background */
+    --gray-medium: #888888;    /* Medium gray text */
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Typography */
+    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.875rem;
+    --font-size-2xl: 2.5rem;
+}
+
+/* ============================================
+   Global Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--dark);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* ============================================
+   Navigation Bar
+   ============================================ */
+.navbar {
+    background-color: var(--primary);
+    padding: var(--spacing-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--white);
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    transition: color 0.3s ease;
+    padding: var(--spacing-xs) 0;
+}
+
+.nav-link:hover {
+    color: var(--gray-light);
+    border-bottom: 2px solid var(--gray-light);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: var(--white);
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.95;
+}
+
+.hero-description {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.hero-image {
+    margin-top: var(--spacing-lg);
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 300px;
+}
+
+/* ============================================
+   Section Styles
+   ============================================ */
+.section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary);
+    text-align: center;
+}
+
+/* Services Section */
+.services {
+    background-color: var(--gray-light);
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--accent);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+.service-card p {
+    color: var(--gray-medium);
+    line-height: 1.7;
+}
+
+/* Products Section */
+.products {
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.product-card {
+    background-color: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: var(--accent);
+}
+
+.product-card h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+.product-card .price {
+    color: var(--accent);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin: var(--spacing-md) 0;
+}
+
+.product-card p {
+    color: var(--gray-medium);
+    margin-bottom: var(--spacing-md);
+}
+
+.btn {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 4px;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--gray-light);
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+}
+
+.contact-info p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+}
+
+.contact-form {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+}
+
+.contact-form p {
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(74, 124, 44, 0.1);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.footer p {
+    opacity: 0.9;
+}
+
+/* ============================================
+   Loading State
+   ============================================ */
+.loading {
+    text-align: center;
+    color: var(--gray-medium);
+    padding: var(--spacing-lg);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: var(--spacing-lg);
+    }
+
+    .hero-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .services-grid,
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        gap: var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+
+    .hero {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .hero-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+    }
+}
