@@ -1,6 +1,7 @@
 //config 
 const API_BASE_URL = 'http://localhost:5000'; // bch yetbadel
 const SERVICES_ENDPOINT = '/api/services';
+const CONTACT_ENDPOINT = '/api/contact';
 
 // ============================================
 // Initialize App
@@ -77,7 +78,7 @@ function setupContactForm() {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            console.log('[v0] Contact form submitted');
+            console.log('arja3 8odwa');
             
             // Get form values
             const name = contactForm.querySelector('input[type="text"]').value;
@@ -85,8 +86,13 @@ function setupContactForm() {
             const message = contactForm.querySelector('textarea').value;
             
             // Log form data (in production, you'd send this to your backend)
-            console.log('[v0] Form data:', { name, email, message });
-            
+            console.log('Form data:', { name, email, message });
+            // eli yab3eth ll express 
+            fetch('http://localhost:5000/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message })
+            });
             // Show confirmation message
             alert('Thank you for your message! We will get back to you soon.');
             contactForm.reset();

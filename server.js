@@ -18,7 +18,11 @@ app.get('/api/services', (req, res) => {
 });
 app.post('/api/contact' , (req, res) => {
     contacts.push(req.body);
+    console.log('el jmohor:', contacts);
     res.json("wsol");
+});
+app.get('/api/contacts', (req, res) => {
+    res.json(contacts);
 });
 
 app.listen(PORT, () => {
