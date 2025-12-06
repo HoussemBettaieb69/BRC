@@ -1,22 +1,13 @@
-/**
- * CartridgePro Main JavaScript
- * Handles API calls and dynamic content population
- */
-
-// ============================================
-// Configuration
-// ============================================
-const API_BASE_URL = 'http://localhost:5000'; // Update to your backend URL
+//config 
+const API_BASE_URL = 'http://localhost:5000'; // bch yetbadel
 const SERVICES_ENDPOINT = '/api/services';
-const PRODUCTS_ENDPOINT = '/api/products';
 
 // ============================================
 // Initialize App
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('[v0] CartridgePro app initialized');
+    console.log('c bon 5dem');
     loadServices();
-    loadProducts();
     setupContactForm();
 });
 
@@ -62,47 +53,6 @@ async function loadServices() {
     }
 }
 
-// ============================================
-// Fetch Products from API
-// ============================================
-/*async function loadProducts() {
-    const productsList = document.getElementById('products-list');
-    
-    try {
-        console.log('[v0] Fetching products from API...');
-        const response = await fetch(`${API_BASE_URL}${PRODUCTS_ENDPOINT}`);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const products = await response.json();
-        console.log('[v0] Products received:', products);
-        
-        // Clear loading message
-        productsList.innerHTML = '';
-        
-        // Check if products array is empty
-        if (!products || products.length === 0) {
-            productsList.innerHTML = '<p class="loading">No products available at the moment.</p>';
-            return;
-        }
-        
-        // Populate products
-        products.forEach((product) => {
-            const productCard = createProductCard(product);
-            productsList.appendChild(productCard);
-        });
-        
-    } catch (error) {
-        console.error('[v0] Error loading products:', error);
-        productsList.innerHTML = `
-            <p class="loading" style="color: #d32f2f;">
-                Error loading products. Please check your backend connection.
-            </p>
-        `;
-    }
-}*/
 
 // ============================================
 // Create Service Card DOM Element
