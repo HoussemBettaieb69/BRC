@@ -65,7 +65,7 @@ async function loadServices() {
 // ============================================
 // Fetch Products from API
 // ============================================
-async function loadProducts() {
+/*async function loadProducts() {
     const productsList = document.getElementById('products-list');
     
     try {
@@ -102,7 +102,7 @@ async function loadProducts() {
             </p>
         `;
     }
-}
+}*/
 
 // ============================================
 // Create Service Card DOM Element
