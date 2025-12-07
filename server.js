@@ -52,7 +52,7 @@ app.get('/api/contacts', async (req, res) => {
 
 connectDB().then(() => {
     app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
+        console.log(`Server is running on https://brc-jrl3.onrender.com`);
     });
 });
 

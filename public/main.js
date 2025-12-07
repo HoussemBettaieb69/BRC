@@ -88,7 +88,7 @@ function setupContactForm() {
             // Log form data (in production, you'd send this to your backend)
             console.log('Form data:', { name, email, message });
             // eli yab3eth ll express 
-            fetch('http://localhost:5000/api/contact', {
+            fetch('https://brc-jrl3.onrender.com/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, message })
