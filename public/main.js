@@ -1,5 +1,5 @@
 //config 
-const API_BASE_URL = 'http://localhost:5000'; // bch yetbadel
+const API_BASE_URL = 'https://brc-jrl3.onrender.com'; // bch yetbadel
 const SERVICES_ENDPOINT = '/api/services';
 const CONTACT_ENDPOINT = '/api/contact';
 
