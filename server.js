@@ -11,7 +11,7 @@ app.use(cors());//y5alli l frontend yesta3mel l backend
 app.use(express.json());
 app.use(express.static('public'));
 //mongoDB declarations
-dotenv.config({path : 'C:/Users/henit/OneDrive/Desktop/prog/BRC/mongopassword.env'});
+dotenv.config();
 const client = new MongoClient(process.env.MONGO_URI);
 let servicesCollection;
 let contactsCollection;
